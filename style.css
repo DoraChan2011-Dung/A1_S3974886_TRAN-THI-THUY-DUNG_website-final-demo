@@ -1003,7 +1003,7 @@ body {
 /* Poem lines 11–12 – lower block */
 .poem6-line-11-12 {
   position: absolute;
-  top: 76%;
+  top: 68%;
   left: 30%;
   transform: translateX(-50%);
   max-width: 50vw;
@@ -1322,6 +1322,7 @@ body {
     transform: scale(var(--scale-ratio));
   }
 }
+
 
 
 

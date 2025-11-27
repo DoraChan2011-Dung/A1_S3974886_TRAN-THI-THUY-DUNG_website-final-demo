@@ -146,7 +146,7 @@ body {
   -webkit-text-stroke-width: 0.25px;
   -webkit-text-stroke-color: #66295b;
   font-family: "ManufacturingConsent";
-  font-size: 96px;
+  font-size: 80px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -1px;
@@ -1003,13 +1003,13 @@ body {
 /* Poem lines 11–12 – lower block */
 .poem6-line-11-12 {
   position: absolute;
-  top: 82%;
+  top: 76%;
   left: 30%;
   transform: translateX(-50%);
   max-width: 50vw;
   color: #FFECAB;
   font-family: "ManufacturingConsent", serif;
-  font-size: 65px;
+  font-size: 60px;
   font-style: normal;
   font-weight: 400;
   line-height: 119%;
@@ -1322,6 +1322,7 @@ body {
     transform: scale(var(--scale-ratio));
   }
 }
+
 
 
 

@@ -1287,41 +1287,6 @@ body {
   pointer-events: none;
 }
 
-/* ================================================
-   TRUE RESPONSIVE SCALING FOR ART/SHOWCASE SITES
-   Scale by the smaller ratio of width or height
-   So nothing gets cropped on Macbook screens
-================================================= */
-
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-#page-wrapper {
-  width: 1920px;
-  height: 1080px;
-  position: relative;
-  transform-origin: top left;
-}
-
-/* Scale logic */
-@media screen and (min-width: 1024px) {
-  :root {
-    --design-w: 1920;
-    --design-h: 1080;
-    --vw: 100vw;
-    --vh: 100vh;
-
-    /* lấy tỉ lệ nhỏ hơn để tránh crop */
-    --scale-ratio: min(calc(var(--vw) / var(--design-w)),
-                       calc(var(--vh) / var(--design-h)));
-  }
-
-  #page-wrapper {
-    transform: scale(var(--scale-ratio));
-  }
-}
 
 
 

@@ -1286,3 +1286,48 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
+/* ================================================
+   DESKTOP RESPONSIVE WITHOUT CHANGING ORIGINAL CODE
+   Scale the entire page proportionally from 1920px
+================================================= */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Wrapper scale toàn bộ layout dựa trên width màn hình */
+body > main,
+#globalMoon {
+  transform-origin: top left;
+}
+
+/* Desktop scaling */
+@media screen and (min-width: 1024px) {
+  body {
+    --base-width: 1920;      /* kích thước bạn thiết kế ban đầu */
+    --current-width: 100vw;  /* width hiện tại của user */
+
+    --scale-ratio: calc(var(--current-width) / var(--base-width));
+  }
+
+  body > main {
+    transform: scale(var(--scale-ratio));
+    width: 1920px;       /* Phải giữ nguyên để không phá layout */
+  }
+
+  /* Nếu cần scale moon chung */
+  #globalMoon {
+    transform: scale(var(--scale-ratio));
+  }
+}
+
+/* Ngăn layout bị quá cao trên máy nhỏ — scale đồng bộ */
+@media screen and (max-width: 1600px) {
+  body {
+    --current-width: 100vw;
+  }
+}
+
+

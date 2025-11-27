@@ -1288,46 +1288,41 @@ body {
 }
 
 /* ================================================
-   DESKTOP RESPONSIVE WITHOUT CHANGING ORIGINAL CODE
-   Scale the entire page proportionally from 1920px
+   TRUE RESPONSIVE SCALING FOR ART/SHOWCASE SITES
+   Scale by the smaller ratio of width or height
+   So nothing gets cropped on Macbook screens
 ================================================= */
 
-html, body {
-  width: 100%;
+body {
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* Wrapper scale toàn bộ layout dựa trên width màn hình */
-body > main,
-#globalMoon {
+#page-wrapper {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
   transform-origin: top left;
 }
 
-/* Desktop scaling */
+/* Scale logic */
 @media screen and (min-width: 1024px) {
-  body {
-    --base-width: 1920;      /* kích thước bạn thiết kế ban đầu */
-    --current-width: 100vw;  /* width hiện tại của user */
+  :root {
+    --design-w: 1920;
+    --design-h: 1080;
+    --vw: 100vw;
+    --vh: 100vh;
 
-    --scale-ratio: calc(var(--current-width) / var(--base-width));
+    /* lấy tỉ lệ nhỏ hơn để tránh crop */
+    --scale-ratio: min(calc(var(--vw) / var(--design-w)),
+                       calc(var(--vh) / var(--design-h)));
   }
 
-  body > main {
-    transform: scale(var(--scale-ratio));
-    width: 1920px;       /* Phải giữ nguyên để không phá layout */
-  }
-
-  /* Nếu cần scale moon chung */
-  #globalMoon {
+  #page-wrapper {
     transform: scale(var(--scale-ratio));
   }
 }
 
-/* Ngăn layout bị quá cao trên máy nhỏ — scale đồng bộ */
-@media screen and (max-width: 1600px) {
-  body {
-    --current-width: 100vw;
-  }
-}
+
 
 
